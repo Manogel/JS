@@ -1,0 +1,3 @@
+        ctrl + A = Coloca a seleção em comentario
+        ctrl + shift + i = identa tudo 
+        ctrl + \ = Abre outra aba

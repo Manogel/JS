@@ -1,0 +1,23 @@
+<html> 
+    <head> 
+        <title> Aula 4 </title>
+    </head>
+    <body>
+        <h1 id= 'retorno'>  </h1>
+        <script>
+            //for(var i=0 ; i<10; i++){}
+            /* while(var i != 10){
+                i++;
+            } */
+            var cont=0;
+            function exibir(){
+                document.getElementById('retorno').innerHTML = "Ola caralho!!" + cont;
+                /* console.log("Ola caralho!!" + cont); */
+                cont++;
+            }
+
+            //setInterval(exibir, 1000); //executa varias vezes 
+            setTimeout(exibir, 5000);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<html>
+    <head>
+        
+        <title> FORMULARIO </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form action ="localhost/servidor.php" method="POST">
+            <br>
+            <div class="form-group" id="formulario">
+                <label> Nome:  </label>
+                <input id='Aa' type = "text" class="form-control" name = "nome"> 
+                <br>
+                <label> Idade: </label>
+                <input id='Bb' type = "number" min="1" class="form-control" name = 'idade'> 
+                <br>
+                <label> Peso: </label>
+                <input id='Cc' type = "number" min="6" class="form-control" name = "peso"> 
+                <small class="form-text text-muted">Seu pesso arredondado pra cima.</small> 
+                <!-- Texto minusculo-->
+            </div>
+            <br>
+            <!-- <div class="form-check">  -->
+            <button type="button" class="btn btn-danger" onclick = "limpar()"> LIMPAR TUDO</button>
+            <button type = "submit" class="btn btn-primary"> CONCLUIR </button> 
+            <!-- SUBMIT declara que uma ação será feita com os dados do formulario!! -->
+            <!-- </div> -->
+        </form>
+        <script>
+            function limpar(){
+                document.querySelector('div > input#Aa').value = '';
+                document.getElementById('Bb').value = '';
+                document.getElementById('Cc').value = '';
+            
+            }
+            function concluirCadastro(){
+                alert('Cadastro finalizado com sucesso!!');
+            } 
+
+        </script>
+    </body>
+</html>

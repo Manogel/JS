@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title> Ola mundo!! </title>
+	</head>
+		<body>
+            <h1 id = 'retorno'>  </h1>
+            <div id="A">
+                <input id='nome'>
+                <a href="http://google.com" target="_blank"> Acesse aqui </a>
+                <br>
+            </div>
+	
+			<script>
+                var linkElement = document.createElement('a'); //criando uma tag </a>(link)
+                linkElement.setAttribute("href", "http://google.com"); //setando no linkElement o endereço 
+                linkElement.setAttribute("title", "site");
+                linkElement.setAttribute("target", "_blank"); //Abre em uma nova aba
+
+                var textElement = document.createTextNode('Acesse por aqui'); //Criando um texto
+                linkElement.appendChild(textElement); //Colocando a referencia no texto
+
+                var containerElement = document.querySelector('#A');   // Seleciona o bloco div 
+                containerElement.appendChild(linkElement); // adicionando o a tag </a> no bloco </div>
+
+                var inputElement = document.querySelector('#nome'); //seleciona a tag(bloco) input
+                containerElement.removeChild(inputElement); //remove a tag
+
+			</script>
+		</body>
+</html>

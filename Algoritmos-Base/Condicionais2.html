@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title> Ola mundo!! </title>
+
+</head>
+
+<body>
+    <h2 id='retorno'> </h2>
+    <meta charset="utf-8">
+    <button onclick="sexo('F')"> TESTAR </button>
+    <button onclick="sexo('V')"> LIMPAR </button>
+    <script>
+        function sexo(sexo) {
+            /*    if (sexo === 'M') { //Valor e tipo!!
+                   return "Masculino!!";
+               } else if (sexo === 'F') {
+                   document.getElementById('retorno').innerHTML = "feminino!!";
+               } else {
+                   return "Outro";
+               }
+           } */
+
+            switch (sexo) {
+                case 'M':
+                    document.getElementById('retorno').innerHTML = "Masculino!!";
+                    break;
+                case 'F':
+                    document.getElementById('retorno').innerHTML = "FEMININO!!";
+                    break;
+                case 'V':
+                    document.getElementById('retorno').innerHTML = " ";
+                    break;
+                default:
+                    document.getElementById('retorno').innerHTML = "OUTRO!!";
+                    break;
+            }
+        }
+        //console.log(sexo('M'));
+
+
+
+    </script>
+</body>
+
+</html>

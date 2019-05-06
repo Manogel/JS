@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title> Ola mundo!! </title>
+	</head>
+		<body>
+            <h1 id = "retorno"> </h1>
+            </h1>
+            <div id='A'>
+                <input type="text" name="nome" id="nome">
+                <input type="text" name="nome" id="nome2">
+                <button class="botao" class ="butao">adicionar</button> 
+            </div>
+            <br>
+            <br>
+            <div id='B'>
+                    <input type="text" name="nome" id="nome">
+                    <input type="text" name="nome" id="nome2">
+                    <button class="botao" class ="butao">adicionar</button> 
+                </div>	
+
+			<script>
+                /* function alertaa(){
+                var x = document.getElementById('nome');
+                document.getElementById('retorno').innerHTML = ""+ x.value; 
+                } */
+                var btn = document.querySelector("div#B button.botao"); // seleciona na tag referenciada por 'B' o buttao que tem casse igual a butao
+
+                btn.onclick = function(){
+                    alert("Cliquei!!");
+                }
+
+
+			</script>
+		</body>
+</html>
