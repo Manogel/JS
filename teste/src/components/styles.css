@@ -1,0 +1,40 @@
+.repos {
+  background: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 15px #aaa;
+  min-width: 400px;
+}
+.title {
+  text-align: center;
+  font-size: 15pt;
+}
+
+.criado {
+  font-size: 11pt;
+  color: #aaa;
+  margin-bottom: 0px;
+}
+
+.linguagem {
+  color: #aaa;
+  margin: 0px;
+}
+.repos a {
+  display: flex;
+  background: #db883b;
+  border: none;
+  padding: 10px;
+  color: #fff;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 11pt;
+}
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
