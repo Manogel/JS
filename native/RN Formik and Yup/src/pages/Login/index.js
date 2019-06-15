@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Icon from "react-native-vector-icons/Feather";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { ActivityIndicator } from "react-native";
+import { ActivityIndicator, Alert } from "react-native";
 
 import {
   Container,
@@ -19,7 +19,7 @@ import {
   Error
 } from "./styles";
 
-export default function Loginn() {
+export default function Loginn(props) {
   const [loading, setLoading] = useState(false);
 
   function handleLogin(values) {
@@ -28,6 +28,14 @@ export default function Loginn() {
     setTimeout(() => {
       setLoading(false);
     }, 300);
+  }
+
+  useEffect(
+    funcao, []
+  )
+
+  async function funcao() {
+    setLoading(false);
   }
 
   const Validation = Yup.object().shape({
@@ -41,25 +49,27 @@ export default function Loginn() {
     <Container>
       <Formik
         validationSchema={Validation}
-        validateOnBlur={false}
-        validateOnChange={false}
+        validateOnBlur={true}
+        validateOnChange={!false}
         initialValues={{ email: "", password: "" }}
         onSubmit={values => handleLogin(values)}
-        render={({ values, handleSubmit, handleChange, errors, isValid }) => (
+        render={({ values, handleSubmit, handleChange, errors, isValid, handleBlur, touched }) => (
           <>
             <Title> Bem Vindo! </Title>
             <Form>
               <InputEmail
-                error={errors.email}
+                onBlur={handleBlur("email")}
+                error={errors.email && touched.email}
                 autoCapitalize="none"
                 onChangeText={handleChange("email")}
                 value={values.email}
                 placeholder="Email"
                 placeholderTextColor="#18438b"
               />
-              {!!errors.email && <Error> {errors.email} </Error>}
+              {(!!errors.email && !!touched.email) && <Error> {errors.email} </Error>}
               <InputPassword
-                error={errors.password}
+                onBlur={handleBlur("password")}
+                error={errors.password && touched.password}
                 autoCapitalize="none"
                 onChangeText={handleChange("password")}
                 value={values.password}
@@ -68,7 +78,7 @@ export default function Loginn() {
                 secureTextEntry
                 style={{ marginTop: 15 }}
               />
-              {!!errors.password && <Error> {errors.password} </Error>}
+              {(!!errors.password && touched.password) && <Error> {errors.password} </Error>}
             </Form>
             <BoxBottom>
               <TextButton> Login </TextButton>
@@ -76,8 +86,8 @@ export default function Loginn() {
                 {loading ? (
                   <ActivityIndicator size={22} color="#fff" />
                 ) : (
-                  <Icon name="arrow-right" size={22} color="#fff" />
-                )}
+                    <Icon name="arrow-right" size={22} color="#fff" />
+                  )}
               </Login>
             </BoxBottom>
           </>
