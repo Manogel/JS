@@ -11,6 +11,7 @@ import OneSignal from 'react-native-onesignal'; // Import package from node modu
 import {
   Platform, StyleSheet, Text, View,
 } from 'react-native';
+import '~/config/ReactotronConfig';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -47,6 +48,8 @@ export default class App extends Component {
     OneSignal.addEventListener('received', this.onReceived);
     OneSignal.addEventListener('opened', this.onOpened);
     OneSignal.addEventListener('ids', this.onIds);
+    OneSignal.sendTag('user', '1');
+    console.tron.log(this.onIds);
     OneSignal.configure();
   }
 
@@ -68,7 +71,7 @@ export default class App extends Component {
   }
 
   onIds(device) {
-    // console.log('Device info: ', device);
+    console.tron.log('Device info: ', device);
   }
 
   render() {
